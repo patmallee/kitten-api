@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'kittens/index'
-
-  get 'kittens/show'
-
-  get 'kittens/new'
-
-  get 'kittens/edit'
+  resources :kittens
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
