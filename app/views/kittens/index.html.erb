@@ -1,2 +1,14 @@
-<h1>Kittens#index</h1>
-<p>Find me in app/views/kittens/index.html.erb</p>
+<h1>Kitten Keeper! - *MEOW* :3</h1>
+
+<h3>Here's a list of all your kittens:</h3>
+
+<ul>
+  <% @kittens.each do |kitten| %>
+    <li>
+      <h5><%= kitten.name %></h5>
+      <p>Age: <%= kitten.age %></p>
+      <p>Cuteness: <%= kitten.cuteness %></p>
+      <p>Softness: <%= kitten.softness %></p>
+    </li>
+  <% end %>
+</ul>
