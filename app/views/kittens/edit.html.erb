@@ -1,3 +1,6 @@
 <h3>Modify your Kittens - You are now viewing <%= @kitten.name %></h3>
 
 <%= render 'kitten_form' %>
+
+<br><br>
+<%= link_to "Delete this kitten? *meep*", url: kitten_url(@kitten), method: :delete %>
