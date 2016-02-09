@@ -31,7 +31,7 @@ class KittensController < ApplicationController
     @kitten.update_attributes(kitten_params)
     if @kitten.save
       flash[:success] = "You have successfully modified kitten #{@kitten.name}! Mew mew -"
-      redirect_to kitten_path(params[:id])
+      redirect_to @kitten
     else
       flash.now[:alert] = "How hard can it be to modify your kitten... seriously... *hisssss*"
       render edit_kitten_path(@kitten)
@@ -45,7 +45,7 @@ class KittensController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = "Don't you know cats have 9 lives? PuuurrRR!"
-      render kitten_path(@kitten)
+      render @kitten
     end
   end
   
