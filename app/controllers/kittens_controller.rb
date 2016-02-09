@@ -33,7 +33,7 @@ class KittensController < ApplicationController
       redirect_to kitten_path(params[:id])
     else
       flash.now[:alert] = "How hard can it be to modify your kitten... seriously... *hisssss*"
-      render 'edit'
+      render edit_kitten_path(@kitten)
     end
   end
   
@@ -44,6 +44,7 @@ class KittensController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = "Don't you know cats have 9 lives? PuuurrRR!"
+      render kitten_path(@kitten)
     end
   end
   
