@@ -34,7 +34,7 @@ class KittensController < ApplicationController
       redirect_to @kitten
     else
       flash.now[:alert] = "How hard can it be to modify your kitten... seriously... *hisssss*"
-      render edit_kitten_path(@kitten)
+      render 'edit'
     end
   end
   
