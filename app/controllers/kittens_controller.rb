@@ -12,7 +12,7 @@ class KittensController < ApplicationController
   end
   
   def create
-    @kitten.Kitten.new(kitten_params)
+    @kitten = Kitten.new(kitten_params)
     if @kitten.save
       flash[:success] = "You have successfully created a kitten named #{@kitten.name}! MEOW!"
       redirect_to root_url
@@ -27,7 +27,8 @@ class KittensController < ApplicationController
   end
   
   def update
-    @kitten.update_parameters(kitten_params)
+    @kitten = Kitten.find(params[:id])
+    @kitten.update_attributes(kitten_params)
     if @kitten.save
       flash[:success] = "You have successfully modified kitten #{@kitten.name}! Mew mew -"
       redirect_to kitten_path(params[:id])
