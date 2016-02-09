@@ -8,5 +8,7 @@
       <p>Cuteness: <%= kitten.cuteness %></p>
       <p>Softness: <%= kitten.softness %></p>
     </li>
+    <br>
+    <%= link_to "Delete this kitten? *meep*", url: kitten_url(kitten.id), method: :delete %>
   <% end %>
 </ul>
